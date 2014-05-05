@@ -36,14 +36,751 @@
 //				display: none
 // ## fonts 
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
-// =book
-// 	font-family: "book",arial,sans-serif 
++font(turbotabook, turbotabook)  
+=f
+	font-family: "turbotabook", Arial, sans-serif 
++font(turbotabold, turbotabold)  
+=fb
+	font-family: "turbotabold", Arial, sans-serif 
+
+$bl: #00BFFF
 	
 body
-	font-size: 12px 
+	background: url(../img/bg.jpg) no-repeat 50% 0 #dcccc0
 	font-family: Arial, sans-serif 
 	line-height: 1.4
+	font-size: 14px
+	color: #333 
+a
+	text-decoration: none
+	color: $bl 
 
 
 // common blocks      
+.wrapper
+	width: 1250px
+	margin: 0 auto
+	padding: 0 30px
+	background: rgba(255,255,255,.3)
+	
+.header
+	height: 150px
+	padding: 0 20px
+	background: #FFF
+	border-radius: 5px 
+	.header__phone, .header__map
+		float: right
+		height: 70px
+		margin-top: 40px
+		border-left: #28D2E9 1px dashed 
+	.header__phone
+		padding-left: 40px
+		text-align: right
+	.header__map
+		padding: 0 45px 0 40px 
+	.header__map-ico, .header__phone-ico,
+	.header__map-in, .header__phone-in
+		display: inline-block
+		vertical-align: middle
+	.header__map-ico
+		+s(header-map)
+	.header__phone-ico
+		+s(header-phone)
+	.header__map-in
+		padding:  5px 0 5px 40px
+		span
+			display: block
+		a
+			font-size: 12px
+			color: #333 
+	.header__phone-in
+		padding-left: 40px
+	.header__phone-number
+		background: -webkit-linear-gradient(#42c24f 0%, #1796ce 100%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		color: #42c24f 
+		+f
+		font-size: 24px
+		line-height: 1
+	.header__phone-text
+		font-size: 12px
+
+.logo
+	float: left
+	+s(logo)
+
+.btn
+	display: inline-block
+	height: 32px
+	padding: 0 17px
+	border: 1px solid #28a584
+	border-radius: 16px
+	background-color: #474747
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 0 rgba(0,0,0,.1)
+	+g(#42c24f 0%, #1796ce 100%)
+	line-height: 30px
+	color: #f9f9f9
+	font-size: 14px
+	text-shadow: 0 1px 0 rgba(0,0,0,.2)
+	vertical-align: top
+	+box
+
+.stats
+	padding: 7px 0 5px
+	+fb
+	text-align: justify
+	font-size: 0
+	&:after
+		content: ""
+		display: inline-block
+		width: 100%
+		height: 0
+	li
+		display: inline-block
+		font-size: 18px
+		color: #13495F 
+	span
+		margin-right: 5px
+		background: -webkit-linear-gradient(#42c24f 0%, #1796ce 100%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		+f
+		color: #42c24f 
+		font-size: 36px
+		
+.links
+	margin: -9px 0 25px
+	a
+		display: block
+	.links__online
+		+s(link-online)
+	.links__hot
+		+s(link-hot) 
+	.links__order
+		+s(link-order) 
+	.links__sms
+		+s(link-sms) 
+	.links__mail
+		+s(link-mail)
+	.links__in
+		display: table-cell
+		width: 170px
+		height: 106px
+		padding-left: 20px
+		vertical-align: middle
+		font-size: 16px
+		color: #FFF 
+		span
+			display: block
+			+f
+			font-size: 24px
+			text-shadow: 0 1px 0 rgba(0,0,0,.2)
+			line-height: 1
+	&.links_right
+		padding-left: 2px
+		margin: 0 0 10px
+		.links__in
+			width: auto
+			padding: 0 10px 0 110px
+			font-size: 14px
+			span
+				font-size: 18px
+	
+.themost
+	padding-left: 10px
+	margin-bottom: 40px
+.themost__item
+	margin-bottom: 15px
+.themost__title
+	padding: 0 4px 3px
+	+fb
+	font-size: 15px
+	color: #01445A 
+.themost__in
+	position: relative
+	display: block
+	&:hover
+		span
+			text-decoration: underline
+	img
+		display: block
+		border-radius: 5px
+	span
+		position: absolute
+		right: 0
+		bottom: 0
+		height: 38px
+		padding: 0 30px 0 5px
+		+gh(#50c876, #1c9bcb)
+		border-radius: 0 0 5px 0
+		line-height: 38px	
+		color: #f9f9f9 
+		text-shadow: 0 1px 0 rgba(0,0,0,.2)
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: -40px
+			+s(themost-left)
+		i
+			position: absolute
+			top: 14px
+			right: 9px
+			+s(themost-arr)
+
+.social
+	font-size: 0
+	text-align: center
+	li
+		display: inline-block
+		margin: 0 2px
+		vertical-align: top
+	a
+		display: block
+	.social__tw
+		+s(tw)
+	.social__fb
+		+s(fb) 
+	.social__gp
+		+s(gp)
+	.social__rss
+		+s(rss)
+		
+.action
+	margin-bottom: 15px
+	border: 3px solid $bl
+	border-radius: 15px
+	overflow: hidden
+	.action__img
+		position: relative
+		img
+			display: block
+	.action__label
+		position: absolute
+		top: 150px
+		right: 5px
+		+s(action-label)
+	.action__label-in
+		padding: 35px 8px 0 0
+		color: #FFF
+		font-size: 12px
+		text-align: center
+		text-shadow: 0 1px 0 rgba(0,0,0,.2)
+		line-height: 1.2
+		text-transform: uppercase
+		+rotate(-15)
+		span
+			display: block
+			+f
+			font-size: 24px
+			text-transform: none
+	.action__in
+		padding: 5px 10px 10px
+	.action__price-in
+		position: relative
+		display: inline-block
+		padding: 0 4px
+		+f
+		font-size: 24px
+		color: #01445A
+		line-height: 1.2
+		span
+			font-size: 18px
+		i
+			position: absolute
+			top: 45%
+			left: 0
+			right: 0
+			height: 2px
+			background: #01445A 
+	.action__price-current
+		display: inline-block
+		padding-bottom: 3px
+		+f
+		font-size: 34px
+		color: $bl
+		letter-spacing: -2px
+		line-height: 1
+		span
+			font-size: 18px 
+	.action__people
+		display: inline-block
+	.action__more
+		.btn, .action__more-link
+			display: inline-block
+			vertical-align: middle
+		.btn
+			margin-right: 15px
+	.action__more-link
+		span, i
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-left: 5px
+			+s(action-arr)
+	.action__timer
+		padding: 15px 20px 20px
+		background: #eeeded 
+		text-align: center
+	.action__timer-title
+		margin-bottom: 5px
+	.action__timer-in 
+		font-size: 0
+		>li
+			margin: 0 9px
+		li
+			display: inline-block
+			vertical-align: top
+			li
+				width: 24px
+				height: 40px
+				margin: 0 1px
+				border-radius: 5px
+				background-color: #35a9cd
+				+f
+				font-size: 24px
+				color: #FFF 
+				line-height: 40px
+			span
+				font-size: 12px
+
+.politic
+	margin-bottom: 15px
+	a
+		position: relative
+		padding-left: 22px
+	i
+		position: absolute
+		top: -3px
+		left: 0
+		+s(politic)
+
+.phone
+	height: 127px
+	padding-right: 10px
+	margin-bottom: 20px
+	border-right: 6px solid $bl
+	background: url(../img/phone.jpg) no-repeat 0 0 
+	text-align: right
+	.phone__title	
+		padding: 10px 0
+		+fb
+		font-size: 18px
+	.phone__code
+		background: -webkit-linear-gradient(#42c250, #37b470)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		+fb
+		color: #42c250 
+		font-size: 18px
+		line-height: 1
+	.phone__number
+		background: -webkit-linear-gradient(#37b470, #1c9bcb)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		+fb
+		color: #37b470 
+		font-size: 36px
+		line-height: 1
+	.phone__time
+		padding-top: 5px
+
+.footer
+	height: 140px
+	border-radius: 5px 5px 0 0
+	background: url(../img/footer-bg.jpg) no-repeat 0 0 
+	.footer__in
+		padding-top: 62px
+		font-size: 0
+		text-align: center
+		.btn, .field
+			display: inline-block
+			vertical-align: middle
+		.btn
+			margin-left: 10px
+		.field
+			width: 150px
+			margin-right: 10px
+
+.field
+	font-size: 12px
+	.field__el, .field__label
+		display: block
+	.field__el
+		>input
+			width: 100%
+			height: 23px
+			padding: 0 5px
+			border: 1px solid #d5d5d5
+			border-radius: 5px
+			background-color: #fff
+			box-shadow: inset 0 4px 5px #f0f0f0
+			+box
+			+placeholder-color(#404040)
+			font-size: 12px
+	.field__label
+		padding: 0 5px
+		color: #5F5F5F 
+	.field__dp
+		+s(dp)
+
+.checkbox
+	position: relative
+	display: block
+	+nosel
+	input
+		position: absolute
+		top: 1px
+		left: 0
+		opacity: 0
+		z-index: 2  
+		&:checked + .checkbox__text
+			&:before
+				+s(checkbox-a)
+	.checkbox__text
+		position: relative
+		padding: 2px 0 1px 21px
+		font-size: 12px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			+s(checkbox)
+			
+.select			
+	position: relative
+	.select__head
+		position: relative
+		height: 23px
+		padding: 0 5px
+		border: 1px solid #d5d5d5
+		border-radius: 5px
+		background-color: #fff
+		box-shadow: inset 0 4px 5px #f0f0f0
+		+box
+	.select__value
+		padding-right: 25px
+		height: 21px
+		overflow: hidden
+		line-height: 23px
+		font-size: 12px
+		white-space: nowrap
+	.select__arr
+		position: absolute
+		top: 5px
+		right: 0
+		width: 18px
+		height: 13px
+		border-left: 1px solid #ddd 
+		i
+			position: absolute
+			top: 5px
+			left: 6px
+			+arr(7,4,#474747,b)
+	.select__el
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border: none
+		-webkit-appearance: none
+		+opacity(0)
+
+.choice
+	margin-bottom: 30px
+	border-radius: 5px
+	background: url(../img/bg.jpg) no-repeat 50% -235px
+	.choice__in
+		padding: 20px 5px
+		background: rgba(255,255,255,.3) 
+	.choice__title
+		position: relative
+		height: 38px
+		padding-left: 20px
+		margin: 0 20px 20px -5px
+		background: #35a9ce 
+		+f
+		color: #f9f9f9
+		font-size: 24px
+		text-shadow: 0 1px 0 rgba(0,0,0,.2)
+		line-height: 38px
+		&:before
+			content: ""
+			position: absolute
+			top: -5px
+			left: 0
+			+s(choice-title-left)
+		i
+			position: absolute
+			top: 0
+			right: -17px
+			+s(choice-title-right)
+	.choice__layout
+		margin-bottom: 12px
+		+clr
+	.choice__col
+		float: left
+		width: 25%
+		padding-left: 5px
+		+box
+		&:first-child
+			padding: 0
+	.choice__foot
+		padding-top: 15px
+		+clr
+		.btn
+			float: left
+			margin-right: 15px
+	.choice__text
+		+f
+		font-size: 18px
+		color: #13495F 
+		line-height: .9
+	.field__el
+		+clr
+	.select, .field__dp
+		float: left
+	.select
+		width: 100%
+		margin-right: 3px
+	.field
+		float: left
+		width: 100%
+		margin-left: 3px
+		&:first-child
+			margin: 0
+	.field__dp
+		margin-top: 3px
+	.checkbox
+		float: left
+		margin-top: 18px 
+
+.tours
+	.tours__title
+		+fb
+		font-size: 34px 
+		color: $bl 
+	.tours__item
+		padding: 20px 0
+		border-bottom: 1px dashed #b7b7b7
+		+clr
+		&:first-child
+			border-top: 1px dashed #b7b7b7
+	.tours__img
+		float: left
+		margin-right: 20px
+		img
+			display: block
+			border-radius: 5px
+	.tours__in	
+		display: table
+		line-height: 1.2
+	.tours__name
+		margin-bottom: 10px
+		+f
+		font-size: 21px
+		color: #01445a 
+	.tours__description
+		margin-bottom: 25px 
+	.tours__price
+		+f
+		color: #01445a
+		font-size: 18px
+		span
+			font-size: 24px
+	.tours__order
+		margin-bottom: 30px 
+	.tours__date
+		margin-bottom: 5px
+		span
+			font-weight: bold
+	.tours__link	
+		span, i
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-left: 5px
+			+s(action-arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
