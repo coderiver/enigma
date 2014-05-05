@@ -44,6 +44,7 @@
 	font-family: "turbotabold", Arial, sans-serif 
 
 $bl: #00BFFF
+$cl: #01445a
 	
 body
 	background: url(../img/bg.jpg) no-repeat 50% 0 #dcccc0
@@ -560,9 +561,20 @@ a
 
 .tours
 	.tours__title
+		margin-bottom: 10px
 		+fb
 		font-size: 34px 
 		color: $bl 
+		line-height: 1
+	.tours__title_small
+		margin-bottom: 5px
+		font-size: 28px
+	.tours__title-sub
+		margin-bottom: 10px
+		+fb
+		color: $cl
+		font-size: 21px 
+		line-height: 1.2
 	.tours__item
 		padding: 20px 0
 		border-bottom: 1px dashed #b7b7b7
@@ -572,6 +584,18 @@ a
 	.tours__img
 		float: left
 		margin-right: 20px
+		a
+			position: relative
+			display: block
+			&:after
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				box-shadow: 0 0 0 3px rgba(255,255,255,.3) inset
+				border-radius: 5px
 		img
 			display: block
 			border-radius: 5px
@@ -605,9 +629,41 @@ a
 			margin-left: 5px
 			+s(action-arr)
 
-
-
-
+.countries
+	padding: 10px 20px 10px 0
+	margin-bottom: 30px
+	border-right: 6px solid #59cf67
+	+gh(#fff, #f9f9f9)
+	.countries__item
+		display: block
+		margin-top: 15px
+		font-size: 0
+		&:first-child
+			margin: 0
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			position: relative
+			margin-right: 30px
+			&:after
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				box-shadow: 0 0 0 3px rgba(255,255,255,.3) inset
+				border-radius: 5px
+		img
+			display: block
+			border-radius: 5px
+		span
+			width: 170px
+			+fb
+			font-size: 21px
+			color: $cl 
+			line-height: 1.2 
 
 
 

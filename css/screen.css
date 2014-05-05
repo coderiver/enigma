@@ -170,11 +170,15 @@ a { text-decoration: none; color: deepskyblue; }
 .choice .field__dp { margin-top: 3px; }
 .choice .checkbox { float: left; margin-top: 18px; }
 
-.tours .tours__title { font-family: "turbotabold", Arial, sans-serif; font-size: 34px; color: deepskyblue; }
+.tours .tours__title { margin-bottom: 10px; font-family: "turbotabold", Arial, sans-serif; font-size: 34px; color: deepskyblue; line-height: 1; }
+.tours .tours__title_small { margin-bottom: 5px; font-size: 28px; }
+.tours .tours__title-sub { margin-bottom: 10px; font-family: "turbotabold", Arial, sans-serif; color: #01445a; font-size: 21px; line-height: 1.2; }
 .tours .tours__item { padding: 20px 0; border-bottom: 1px dashed #b7b7b7; *zoom: 1; }
 .tours .tours__item:after { content: " "; display: table; clear: both; }
 .tours .tours__item:first-child { border-top: 1px dashed #b7b7b7; }
 .tours .tours__img { float: left; margin-right: 20px; }
+.tours .tours__img a { position: relative; display: block; }
+.tours .tours__img a:after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3) inset; border-radius: 5px; }
 .tours .tours__img img { display: block; border-radius: 5px; }
 .tours .tours__in { display: table; line-height: 1.2; }
 .tours .tours__name { margin-bottom: 10px; font-family: "turbotabook", Arial, sans-serif; font-size: 21px; color: #01445a; }
@@ -186,6 +190,15 @@ a { text-decoration: none; color: deepskyblue; }
 .tours .tours__date span { font-weight: bold; }
 .tours .tours__link span, .tours .tours__link i { display: inline-block; vertical-align: middle; }
 .tours .tours__link i { margin-left: 5px; background: url('../img/icons-s67e99f55e7.png') 0 -1437px no-repeat; width: 10px; height: 10px; }
+
+.countries { padding: 10px 20px 10px 0; margin-bottom: 30px; border-right: 6px solid #59cf67; background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9)); background-image: -webkit-linear-gradient(left, #ffffff, #f9f9f9); background-image: -moz-linear-gradient(left, #ffffff, #f9f9f9); background-image: -o-linear-gradient(left, #ffffff, #f9f9f9); background-image: linear-gradient(left, #ffffff, #f9f9f9); }
+.countries .countries__item { display: block; margin-top: 15px; font-size: 0; }
+.countries .countries__item:first-child { margin: 0; }
+.countries .countries__item i, .countries .countries__item span { display: inline-block; vertical-align: middle; }
+.countries .countries__item i { position: relative; margin-right: 30px; }
+.countries .countries__item i:after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3) inset; border-radius: 5px; }
+.countries .countries__item img { display: block; border-radius: 5px; }
+.countries .countries__item span { width: 170px; font-family: "turbotabold", Arial, sans-serif; font-size: 21px; color: #01445a; line-height: 1.2; }
 
 .layout { padding: 20px 0; margin-bottom: 10px; background: white; border-radius: 5px; *zoom: 1; }
 .layout:after { content: " "; display: table; clear: both; }
