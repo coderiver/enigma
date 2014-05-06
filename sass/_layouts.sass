@@ -9,9 +9,46 @@
 		float: left
 		width: 290px
 		margin-right: 30px
+		+rt(1290)
+			margin-right: 20px
+		+rt(1020)
+			float: none
+			margin: 0 auto
 	.layout__col-2
 		float: left
 		width: 610px
+		+rt(1290)
+			float: none
+			width: auto
+			padding-right: 20px
+			overflow: hidden
+		+rt(1020)
+			float: none
+			margin: 0 auto 20px
+			padding: 0
+			clear: both
 	.layout__col-3
 		float: right
 		width: 290px
+		+rt(1290)
+			float: none
+			margin: 0 auto
+			clear: both
+	.layout__col-4
+		float: right
+		width: 910px
+		margin-right: 20px
+		+rt(1290)
+			float: none
+			width: auto
+			padding: 0 20px
+			margin: 0 0 20px
+			clear: both
+		+rt(1020)
+			padding: 0
+	.layout__col-5
+		float: left
+		width: 290px
+		+rt(1290)
+			float: none
+			margin: 0 auto
