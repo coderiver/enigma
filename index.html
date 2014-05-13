@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Template</title>
-	<meta name="viewport" content="initial-scale=1"/>
+	<!-- <meta name="viewport" content="initial-scale=1"/> -->
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 </head>
 <body>
@@ -45,16 +45,19 @@
 				<li class="links__item">
 					<a class="links__online" href="#">
 						<div class="links__in"><span>On-line tour</span>Купить тур на сайте</div>
+						<i></i>
 					</a>
 				</li>
 				<li class="links__item">
 					<a class="links__hot" href="#">
 						<div class="links__in"><span>Горящие туры</span>Выгода до 40%</div>
+						<i></i>
 					</a>
 				</li>
 				<li class="links__item">
 					<a class="links__order" href="#">
 						<div class="links__in"><span>Раннее бронирование</span>Выгода до 40%</div>
+						<i></i>
 					</a>
 				</li>
 			</ul>
@@ -308,7 +311,7 @@
 				<div class="tours__list">
 					<div class="tours__item">
 						<div class="tours__img">
-							<img src="http://placehold.it/290x230" alt="">
+							<a href="#"><img src="http://placehold.it/290x230" alt=""></a>
 						</div>
 						<div class="tours__in">
 							<div class="tours__name">Коста-Рика, отели 4* и 5*</div>
@@ -325,7 +328,7 @@
 					</div>
 					<div class="tours__item">
 						<div class="tours__img">
-							<img src="http://placehold.it/290x230" alt="">
+							<a href="#"><img src="http://placehold.it/290x230" alt=""></a>
 						</div>
 						<div class="tours__in">
 							<div class="tours__name">Коста-Рика, отели 4* и 5*</div>
@@ -344,75 +347,83 @@
 			</div>
 		</div>
 		<div class="layout__col-3">
-			<!-- action -->
-			<div class="action">
-				<div class="action__img">
-					<img src="http://placehold.it/290x230" alt="">
-					<div class="action__label">
-						<div class="action__label-in"><span>Акция!</span>ОТЕЛЬ ДНЯ</div>
+			<!-- block -->
+			<div class="block block_left">
+				<!-- action -->
+				<div class="action">
+					<div class="action__img">
+						<img src="http://placehold.it/290x230" alt="">
+						<div class="action__label">
+							<div class="action__label-in"><span>Акция!</span>ОТЕЛЬ ДНЯ</div>
+						</div>
 					</div>
-				</div>
-				<div class="action__in">
-					<div class="action__price">
-						<div class="action__price-in">45 000 <span>руб.</span><i></i></div>
+					<div class="action__in">
+						<div class="action__price">
+							<div class="action__price-in">45 000 <span>руб.</span><i></i></div>
+						</div>
+						<div class="action__price-current">15 000 <span>руб.</span></div>
+						<div class="action__people">(На двоих)</div>
+						<div class="action__more">
+							<button class="btn" href="#">Забронировать</button>
+							<a class="action__more-link" href="#"><span>Подробнее</span><i></i></a>
+						</div>
 					</div>
-					<div class="action__price-current">15 000 <span>руб.</span></div>
-					<div class="action__people">(На двоих)</div>
-					<div class="action__more">
-						<button class="btn" href="#">Забронировать</button>
-						<a class="action__more-link" href="#"><span>Подробнее</span><i></i></a>
+					<div class="action__timer">
+						<div class="action__timer-title">До конца предложения:</div>
+						<ul class="action__timer-in">
+							<li>
+								<ul>
+									<li>0</li>
+									<li>5</li>
+								</ul>
+								<span>часов</span>
+							</li>
+							<li>
+								<ul>
+									<li>2</li>
+									<li>7</li>
+								</ul>
+								<span>минут</span>
+							</li>
+							<li>
+								<ul>
+									<li>3</li>
+									<li>5</li>
+								</ul>
+								<span>секунд</span>
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="action__timer">
-					<div class="action__timer-title">До конца предложения:</div>
-					<ul class="action__timer-in">
-						<li>
-							<ul>
-								<li>0</li>
-								<li>5</li>
-							</ul>
-							<span>часов</span>
-						</li>
-						<li>
-							<ul>
-								<li>2</li>
-								<li>7</li>
-							</ul>
-							<span>минут</span>
-						</li>
-						<li>
-							<ul>
-								<li>3</li>
-								<li>5</li>
-							</ul>
-							<span>секунд</span>
-						</li>
-					</ul>
 				</div>
 			</div>
-			<!-- links -->
-			<ul class="links links_right">
-				<li class="links__item">
-					<a class="links__sms" href="#">
-						<div class="links__in"><span>Подпишись на SMS</span>Уведомление о лучших турах</div>
-					</a>
-				</li>
-				<li class="links__item">
-					<a class="links__mail" href="#">
-						<div class="links__in"><span>Оставь e-mail</span>Получай информацию о СКИДКАХ!</div>
-					</a>
-				</li>
-			</ul>
-			<!-- politic -->
-			<div class="politic">
-				<a href="#">Политика конфиденциальности данных<i></i></a>
-			</div>
-			<!-- phone -->
-			<div class="phone">
-				<div class="phone__title">— Есть вопросы? Звони!</div>
-				<div class="phone__code">+ 7 (495)</div>
-				<div class="phone__number">508 49 99</div>
-				<div class="phone__time">c 10:00 до 19:00 МСК</div>
+			<!-- block -->
+			<div class="block">
+				<!-- links -->
+				<ul class="links links_right">
+					<li class="links__item">
+						<a class="links__sms" href="#">
+							<div class="links__in"><span>Подпишись на SMS</span>Уведомление о лучших турах</div>
+							<i></i>
+						</a>
+					</li>
+					<li class="links__item">
+						<a class="links__mail" href="#">
+							<div class="links__in"><span>Оставь e-mail</span>Получай информацию о СКИДКАХ!</div>
+							<i></i>
+						</a>
+					</li>
+				</ul>
+				<!-- politic -->
+				<div class="politic">
+					<a href="#">Политика конфиденциальности данных<i></i></a>
+				</div>
+				<!-- phone -->
+				<div class="phone">
+					<div class="phone__title">— Есть вопросы? Звони!</div>
+					<div class="phone__code">+ 7 (495)</div>
+					<div class="phone__number">508 49 99</div>
+					<div class="phone__time">c 10:00 до 19:00 МСК</div>
+				</div>
 			</div>
 		</div>
 	</div>

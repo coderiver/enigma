@@ -60,6 +60,8 @@ a
 	text-decoration: none
 	color: $bl 
 
+// *
+// 	box-shadow: 0 0 0 1px red
 
 // common blocks      
 .wrapper
@@ -68,12 +70,16 @@ a
 	padding: 0 30px
 	background: rgba(255,255,255,.3)
 	+rt(1340)
-		padding: 0 10px
-	+rt(1290)
-		width: auto
-	+rt(1020)
 		padding: 0 5px
-	
+	+rt(1290)
+		width: 1004px
+		padding: 0
+		background: none 
+	+rt(1022)
+		width: 748px
+	+rt(766)
+		width: 310px
+		padding: 0 5px
 .header
 	padding: 15px 20px
 	background: #FFF
@@ -81,26 +87,36 @@ a
 	+clr
 	+rt(1290)
 		padding: 10px 
-	+rt(1020)
-		padding: 5px 5px 15px
+	+rt(1022)
+		padding: 5px 15px 15px
+	+rt(766)
+		padding: 5px
 	.header__phone, .header__map
 		float: right
 		height: 70px
 		margin-top: 25px
 		border-left: #28D2E9 1px dashed 
 		font-size: 0
-		+rt(1020)
-			float: none
-			height: auto
-			margin-top: 15px
 	.header__phone
 		padding-left: 40px
 		+rt(1290)
 			padding-left: 10px
+		+rt(1022)
+			margin-bottom: 20px
+		+rt(766)
+			float: none
+			margin: 0 0 10px
 	.header__map
 		padding: 0 45px 0 40px 
 		+rt(1290)
 			padding: 0 0 0 10px
+		+rt(1022)
+			float: none
+			height: auto
+			margin-left: 200px
+			clear: both
+		+rt(766)
+			margin: 0
 	.header__map-ico, .header__phone-ico,
 	.header__map-in, .header__phone-in
 		display: inline-block
@@ -108,18 +124,18 @@ a
 		font-size: 14px
 	.header__map-ico
 		+s(header-map)
-		+rt(1020)
+		+rt(1022)
 			+s(header-map-r)
 	.header__phone-ico
 		+s(header-phone)
-		+rt(1020)
+		+rt(1022)
 			+s(header-phone-r)
 	.header__map-in
 		padding:  5px 0 5px 40px
 		+rt(1290)
 			padding: 10px 10px 5px 10px 
 			font-size: 12px
-		+rt(1020)
+		+rt(1022)
 			padding: 0 0 0 10px 
 		span
 			display: block
@@ -145,10 +161,11 @@ a
 .logo
 	float: left
 	+s(logo)
-	+rt(1020)
+	+rt(1022)
+		+s(logo-r)
+	+rt(766)
 		float: none
 		display: block
-		+s(logo-r)
 
 .btn
 	display: inline-block
@@ -176,14 +193,22 @@ a
 		display: inline-block
 		width: 100%
 		height: 0
+		+rt(1022)
+			display: none
 	li
 		display: inline-block
 		font-size: 18px
 		color: #13495F 
-		+rt(1020)
-			display: block
-			line-height: 1
+		+rt(1290)
+			font-size: 16px
+		+rt(1022)
+			width: 50%
+			text-align: center
+		+rt(766)
+			width: 100%
+			text-align: left
 			font-size: 14px
+			line-height: 1.1
 	span
 		margin-right: 10px
 		background: -webkit-linear-gradient(#42c24f 0%, #1796ce 100%)
@@ -193,116 +218,159 @@ a
 		color: #42c24f 
 		font-size: 36px
 		letter-spacing: -3px
-		+rt(1020)
-			font-size: 32px
+		+rt(1290)
+			font-size: 30px
 		
 .links
 	margin: -9px 0 25px
-	+rt(1020)
-		margin: -9px 0 15px -10px
-	a
-		display: block
+	+rt(1022)
+		margin: -9px 0 15px 0
+	+rt(766)
+		margin: 0 0 15px 
 	.links__online
 		+s(link-online)
+		>i
+			+s(link-online-ico)
 	.links__hot
 		+s(link-hot) 
+		>i
+			+s(link-hot-ico)
 	.links__order
 		+s(link-order) 
+		>i
+			+s(link-order-ico)
 	.links__sms
 		+s(link-sms) 
+		>i
+			+s(link-sms-ico)
 	.links__mail
 		+s(link-mail)
+		>i
+			+s(link-mail-ico)
+	.links__item
+		a
+			position: relative
+			display: inline-block
+			+rt(1290)
+				width: 153px
+			+rt(766)	
+				width: 191px
+			>i
+				position: absolute
+				top: 0
+				right: -97px
 	.links__in
 		display: table-cell
-		width: 170px
 		height: 106px
 		padding-left: 20px
 		vertical-align: middle
+		text-shadow: 0 1px 0 rgba(0,0,0,.2)
 		font-size: 16px
 		color: #FFF 
+		+rt(1290)
+			padding-left: 10px
+			font-size: 14px
 		span
 			display: block
 			+f
 			font-size: 24px
-			text-shadow: 0 1px 0 rgba(0,0,0,.2)
 			line-height: 1
+			+rt(1290)
+				font-size: 18px
 	&.links_right
-		padding-left: 2px
-		margin: 0 0 10px
+		text-align: right
+		+rt(766)
+			margin: 0 -10px 15px 0 
 		.links__in
-			width: auto
-			padding: 0 10px 0 110px
-			font-size: 14px
-			span
-				font-size: 18px
-		+rt(1290)
-			padding: 0
-			margin: 0 0 10px
-			.links__in
-				width: 170px
-				padding: 0 0 0 20px
-			.links__sms
-				+s(link-sms-left) 
-			.links__mail
-				+s(link-mail-left)
-		+rt(1020)
-			margin: 0 0 10px -10px 
+			text-align: left
+		.links__sms
+			+s(link-sms) 
+			>i
+				+s(link-sms-ico)
+		.links__mail
+			+s(link-mail)
+			>i
+				+s(link-mail-ico)
+		.links__item
+			a
+				+rt(1290)
+					width: 153px
+				+rt(766)	
+					width: 191px
+				>i
+					right: auto
+					left: -97px
 	&.links_left
-		margin: 0 0 10px
-		.links__in
-			font-size: 14px
-			span
-				font-size: 18px
 		.links__sms
 			+s(link-sms-left) 
+			>i
+				+s(link-sms-left-ico)
 		.links__mail
 			+s(link-mail-left)
-		+rt(1020)
-			margin: 0 0 10px -10px 
+			>i
+				+s(link-mail-left-ico)
+		.links__item
+			a
+				+rt(1290)
+					width: 153px
+				+rt(766)	
+					width: 191px
+		+rt(1022)
+			margin: -9px 0 0
+	&.links_right, &.links_left
+		.links__in
+			font-size: 14px
+			span
+				font-size: 17px
+			+rt(1290)
+				font-size: 12px
+				span
+					font-size: 15px
 	
 .themost
 	padding-left: 10px
 	margin-bottom: 40px
-	+rt(1020)
-		padding: 0 10px 0 0
-.themost__item
-	margin-bottom: 15px
-.themost__title
-	padding: 0 4px 3px
-	+fb
-	font-size: 15px
-	color: #01445A 
-.themost__in
-	position: relative
-	display: block
-	&:hover
-		span
-			text-decoration: underline
-	img
+	+rt(766)
+		padding: 0 10px
+	.themost__item
+		margin-bottom: 15px
+	.themost__title
+		padding: 0 4px 3px
+		+fb
+		font-size: 15px
+		color: #01445A 
+	.themost__in
+		position: relative
 		display: block
-		border-radius: 5px
-	span
-		position: absolute
-		right: 0
-		bottom: 0
-		height: 38px
-		padding: 0 30px 0 5px
-		+gh(#50c876, #1c9bcb)
-		border-radius: 0 0 5px 0
-		line-height: 38px	
-		color: #f9f9f9 
-		text-shadow: 0 1px 0 rgba(0,0,0,.2)
-		&:before
-			content: ""
+		&:hover
+			span
+				text-decoration: underline
+		img
+			display: block
+			width: 100%
+			border-radius: 5px
+		span
 			position: absolute
-			top: 0
-			left: -40px
-			+s(themost-left)
-		i
-			position: absolute
-			top: 14px
-			right: 9px
-			+s(themost-arr)
+			right: 0
+			bottom: 0
+			height: 38px
+			padding: 0 30px 0 5px
+			+gh(#50c876, #1c9bcb)
+			border-radius: 0 0 5px 0
+			line-height: 38px	
+			color: #f9f9f9 
+			text-shadow: 0 1px 0 rgba(0,0,0,.2)
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: -40px
+				+s(themost-left)
+			i
+				position: absolute
+				top: 14px
+				right: 9px
+				+s(themost-arr)
 
 .social
 	margin-bottom: 25px
@@ -332,6 +400,7 @@ a
 		position: relative
 		img
 			display: block
+			width: 100%
 	.action__label
 		position: absolute
 		top: 150px
@@ -388,6 +457,8 @@ a
 			vertical-align: middle
 		.btn
 			margin-right: 15px
+			+rt(1290)
+				margin-bottom: 10px
 	.action__more-link
 		span, i
 			display: inline-block
@@ -396,7 +467,7 @@ a
 			margin-left: 5px
 			+s(action-arr)
 	.action__timer
-		padding: 15px 20px 20px
+		padding: 15px 0 20px
 		background: #eeeded 
 		text-align: center
 	.action__timer-title
@@ -440,9 +511,11 @@ a
 	background: url(../img/phone.jpg) no-repeat 0 0 
 	text-align: right
 	.phone__title	
-		padding: 10px 0
+		padding: 15px 0 10px
 		+fb
 		font-size: 18px
+		+rt(1290)
+			font-size: 15px
 	.phone__code
 		background: -webkit-linear-gradient(#42c250, #37b470)
 		-webkit-background-clip: text
@@ -459,6 +532,8 @@ a
 		color: #37b470 
 		font-size: 36px
 		line-height: 1
+		+rt(1290)
+			font-size: 30px
 	.phone__time
 		padding-top: 5px
 
@@ -470,21 +545,27 @@ a
 		padding-top: 62px
 		font-size: 0
 		text-align: center
-		+rt(1020)
+		+rt(1022)
 			padding-top: 23px
 		.btn, .field
 			display: inline-block
 			vertical-align: middle
 		.btn
 			margin-left: 10px
-			+rt(1020)
+			+rt(1022)
 				margin: 0
 		.field
 			width: 150px
 			margin-right: 10px
-			+rt(1020)
+			+rt(1022)
 				width: 274px
 				margin: 0 0 10px
+			&:first-child
+				+rt(1022)
+					margin: 0 10px 10px 0
+				+rt(766)
+					margin: 0 0 10px
+					
 
 .field
 	display: block
@@ -601,6 +682,7 @@ a
 		border-bottom: #38B6A4 3px solid 
 		padding-top: 1px
 		overflow: auto
+		-webkit-overflow-scrolling: touch
 		&::-webkit-scrollbar
 			width: 8px
 		&::-webkit-scrollbar-thumb
@@ -628,12 +710,12 @@ a
 	margin-bottom: 30px
 	border-radius: 5px
 	background: url(../img/bg.jpg) no-repeat 50% -235px
-	+rt(1020)
+	+rt(1022)
 		margin-bottom: 15px
 	.choice__in
 		padding: 20px 5px
 		background: rgba(255,255,255,.3) 
-		+rt(1020)
+		+rt(1022)
 			padding: 10px 5px
 	.choice__title
 		position: relative
@@ -646,10 +728,15 @@ a
 		font-size: 24px
 		text-shadow: 0 1px 0 rgba(0,0,0,.2)
 		line-height: 38px
-		+rt(1020)
+		+rt(1290)
+			font-size: 18px 
+		+rt(1022)
 			padding-left: 5px
 			margin: 0 10px 10px -5px
-			font-size: 15px 
+			font-size: 15px
+		+rt(766)
+			margin: 0 0 10px -5px 
+			border-radius: 0 5px 5px 0
 		&:before
 			content: ""
 			position: absolute
@@ -661,32 +748,41 @@ a
 			top: 0
 			right: -17px
 			+s(choice-title-right)
+			+rt(766)
+				display: none
 	.choice__layout
 		margin-bottom: 12px
 		+clr
-		+rt(1020)
+		+rt(1290)
+			margin: 0 0 0 -5px
+		+rt(1022)
 			margin: 0
 	.choice__col
 		float: left
 		width: 25%
 		padding-left: 5px
 		+box
-		+rt(1020)
+		+rt(1290)
+			width: 50%
+			padding: 0 0 5px 5px
+		+rt(1022)
 			width: 100%
 			padding: 0 0 5px
 		&:first-child
 			padding: 0
-			+rt(1020)
+			+rt(1290)
+				padding: 0 0 5px 5px
+			+rt(1022)
 				padding: 0 0 5px
 	.choice__foot
 		padding-top: 15px
 		+clr
-		+rt(1020)
+		+rt(1022)
 			padding-top: 5px
 		.btn
 			float: left
 			margin-right: 15px
-			+rt(1020)
+			+rt(1022)
 				float: none
 				margin: 0 0 5px
 	.choice__text
@@ -722,13 +818,13 @@ a
 		font-size: 34px 
 		color: $bl 
 		line-height: 1
-		+rt(1020)
+		+rt(1022)
 			padding: 0 10px
 			font-size: 24px
 	.tours__title_small
 		margin-bottom: 5px
 		font-size: 28px
-		+rt(1020)
+		+rt(1022)
 			font-size: 24px
 	.tours__title-sub
 		margin-bottom: 10px
@@ -736,19 +832,22 @@ a
 		color: $cl
 		font-size: 21px 
 		line-height: 1.2
-		+rt(1020)
+		+rt(1022)
 			padding: 0 10px
 			font-size: 16px
 	.tours__item
 		padding: 20px 0
 		border-top: 1px dashed #b7b7b7
 		+clr
-		+rt(1020)
+		+rt(1290)
 			padding: 10px 0 
 	.tours__img
 		float: left
 		margin-right: 20px
-		+rt(1020)
+		+rt(1290)
+			width: 200px 
+			margin-right: 10px
+		+rt(1022)
 			float: none
 			width: 290px
 			margin: 0 auto
@@ -766,11 +865,12 @@ a
 				border-radius: 5px
 		img
 			display: block
+			width: 100%
 			border-radius: 5px
 	.tours__in	
 		display: table
 		line-height: 1.2
-		+rt(1020)
+		+rt(1022)
 			display: block
 			padding: 10px 10px 0
 	.tours__name
@@ -778,11 +878,11 @@ a
 		+f
 		font-size: 21px
 		color: #01445a 
-		+rt(1020)	
+		+rt(1290)	
 			margin: 0 0 5px
 	.tours__description
 		margin-bottom: 25px 
-		+rt(1020)	
+		+rt(1290)	
 			margin: 0 0 5px
 	.tours__price
 		+f
@@ -790,11 +890,11 @@ a
 		font-size: 18px
 		span
 			font-size: 24px
-		+rt(1020)
+		+rt(1290)
 			margin: 0 0 5px
 	.tours__order
 		margin-bottom: 30px 
-		+rt(1020)	
+		+rt(1290)	
 			margin: 0 0 5px
 	.tours__date
 		margin-bottom: 5px
@@ -813,18 +913,21 @@ a
 	margin-bottom: 30px
 	border-right: 6px solid #59cf67
 	+gh(#fff, #f9f9f9)
-	.countries__item
-		display: block
+	>li
 		margin-top: 15px
 		font-size: 0
 		&:first-child
 			margin: 0
+	.countries__item
+		display: block
 		i, span
 			display: inline-block
 			vertical-align: middle
 		i
 			position: relative
 			margin-right: 30px
+			+rt(1290)
+				margin-right: 15px
 			&:after
 				content: ""
 				position: absolute
@@ -843,10 +946,11 @@ a
 			font-size: 21px
 			color: $cl 
 			line-height: 1.2 
+			+rt(1290)
+				width: 140px
+				font-size: 16px
 
 .item
-	+rt(1020)
-		padding: 0 5px
 	.item__title
 		padding-bottom: 10px
 		margin-bottom: 15px
@@ -855,7 +959,7 @@ a
 		font-size: 34px
 		color: $bl
 		line-height: 1 
-		+rt(1020)
+		+rt(1022)
 			font-size: 24px
 	.item__head
 		margin-bottom: 15px
@@ -863,7 +967,7 @@ a
 		+clr
 	.item__back
 		float: left
-		+rt(1020)
+		+rt(1022)
 			float: none
 			margin-bottom: 10px
 		a
@@ -878,23 +982,18 @@ a
 		float: right
 		span
 			font-weight: bold
-		+rt(1020)
+		+rt(1022)
 			float: none
 	.item__img
 		margin-bottom: 20px
 		+clr
-		+rt(1020)
-			margin-bottom: 10px
 	.item__img-big, .item__img-small
 		float: left
-		+rt(1020)
-			float: none
 		img, span
 			display: block
 		img
+			width: 100%
 			border-radius: 5px
-			+rt(1020)
-				width: 100%
 		span
 			position: relative
 			&:after
@@ -907,22 +1006,39 @@ a
 				box-shadow: 0 0 0 3px rgba(255,255,255,.3) inset
 				border-radius: 5px
 	.item__img-big
+		width: 600px
 		margin-right: 20px
-		+rt(1020)
+		+rt(1290)
+			width: 500px
+			margin-right: 10px
+		+rt(1022)
+			width: 490px
+		+rt(766)
+			width: 100%
 			margin: 0 0 10px
 	.item__img-small
+		width: 290px
 		margin-bottom: 20px
-		+rt(1020)
-			margin: 0 0 10px
+		+rt(1290)
+			width: 224px
+			margin-bottom: 10px
+		+rt(1022)
+			width: 228px
+		+rt(766)
+			width: 100%
 	.item__list
 		margin-bottom: 30px
+		+rt(766)
+			margin-bottom: 20px
 	.item__el
 		margin-bottom: 10px
 		+clr
 		.btn
 			float: right
 			margin-left: 35px 
-			+rt(1020)
+			+rt(1022)
+				margin-left: 10px
+			+rt(766)
 				margin: 0
 	.item__price
 		float: right
@@ -932,26 +1048,26 @@ a
 		line-height: 1.3
 		span
 			font-size: 24px
-		+rt(1020)
+		+rt(766)
 			float: left
 	.item__hotel
 		float: left
 		padding-top: 7px
 		font-size: 16px
 		color: $cl
-		+rt(1020)
+		+rt(766)
 			float: none
 			clear: both
 	.item__dots
 		padding-top: 22px
 		overflow: hidden
 		border-bottom: 1px dotted $cl 
-		+rt(1020)
+		+rt(766)
 			display: none
 	.item__description
 		padding: 30px 0
 		border-top: #B7B7B7 1px dashed 
-		+rt(1020)
+		+rt(1290)
 			padding: 10px 0
 	.item__description-title
 		margin-bottom: 10px
@@ -963,7 +1079,7 @@ a
 		padding: 30px 0
 		border-top: #B7B7B7 1px dashed 
 		+clr
-		+rt(1020)
+		+rt(1290)
 			padding: 15px 0 
 	.item__prev, .item__next
 		a
@@ -976,29 +1092,33 @@ a
 		i
 			margin-right: 5px
 			+s(arr-left)
-		+rt(1020)
+		+rt(766)
 			float: none
 	.item__next
 		float: right
 		i
 			margin-left: 5px
 			+s(arr-right)
-		+rt(1020)
+		+rt(766)
 			float: none
 			padding-top: 10px
 
 .online
 	margin-bottom: 35px
 	border-radius: 5px
-	background: url(../img/bg.jpg) no-repeat -650px -235px
-	+rt(1020)
+	background: url(../img/bg.jpg) no-repeat -650px -235px #dcccc0
+	+rt(1022)
 		margin-bottom: 10px
 		background: #fff 
 	.online__in
 		background: rgba(255,255,255,.3) 
 		padding: 20px 40px
-		+rt(1020)
+		+rt(1290)
+			padding: 10px
+		+rt(1022)
 			padding: 10px 5px
+		+rt(766)
+			padding: 0
 	.online__title
 		position: relative
 		height: 38px
@@ -1010,9 +1130,18 @@ a
 		font-size: 34px
 		text-shadow: 0 1px 0 rgba(0,0,0,.2)
 		line-height: 38px
-		+rt(1020)
-			padding-left: 5px
-			margin: 0 20px 10px -5px
+		+rt(1290)
+			padding-left: 10px
+			margin: 0 20px 10px -10px
+			font-size: 32px
+		+rt(1022)
+			padding-left: 15px
+			margin: 0 20px 10px -15px
+			font-size: 18px
+		+rt(766)
+			padding-left: 10px
+			margin: 0 0 10px -10px 
+			border-radius: 0 5px 5px 0
 			font-size: 14px
 		&:before
 			content: ""
@@ -1025,35 +1154,45 @@ a
 			top: 0
 			right: -17px
 			+s(choice-title-right)
+			+rt(766)
+				display: none
 	.online__title-sub
 		margin-bottom: 20px
 		+f
 		font-size: 24px
 		color: $cl
 		line-height: 1.2 
-		+rt(1020)	
+		+rt(1022)	
 			margin-bottom: 10px
 			font-size: 14px
 	.online__layout
 		margin-bottom: 12px
 		+clr
-		+rt(1020)
+		+rt(1290)
+			margin: 0 0 0 -10px
+		+rt(766)
 			margin: 0
 	.online__col
 		float: left
 		width: 25%
 		padding-left: 30px
 		+box
-		+rt(1020)
+		+rt(1290)
+			width: 50%
+			padding: 0 0 10px 10px
+		+rt(766)
 			width: 100%
-			padding: 0
-			margin: 0 0 10px
+			padding: 0 0 10px 
 		&:first-child
 			padding: 0
+			+rt(1290)
+				padding: 0 0 10px 10px 
+			+rt(766)
+				padding: 0 0 10px
 		>.checkbox
 			float: left
 			margin-top: 18px 
-			+rt(1020)
+			+rt(1022)
 				margin: 0
 	.online__foot	
 		text-align: center
@@ -1063,7 +1202,7 @@ a
 		.btn
 			margin-right: 20px 
 	.online__help
-		+rt(1020)
+		+rt(1022)
 			padding-top: 5px
 		a
 			display: block
@@ -1123,7 +1262,7 @@ a
 		margin: -150px 0 0 -245px 
 		border-radius: 10px
 		background: url(../img/popup-bg.png) no-repeat 0 0 
-		+rt(1020)
+		+rt(1022)
 			width: 300px
 			margin: -150px 0 0 -150px
 	.popup__close
@@ -1131,7 +1270,7 @@ a
 		top: -40px
 		right: -40px
 		+s(popup-close)
-		+rt(1020)
+		+rt(1022)
 			right: 0
 	.popup__in
 		padding: 20px 0 40px 
@@ -1146,7 +1285,7 @@ a
 		font-size: 34px
 		text-shadow: 0 1px 0 rgba(0,0,0,.2)
 		line-height: 38px
-		+rt(1020)
+		+rt(1022)
 			font-size: 24px
 		&:before
 			content: ""
@@ -1168,9 +1307,22 @@ a
 		margin-top: 20px
 		text-align: center
 
-
-
-
+.block
+	.links
+		+rt(766)
+			margin-left: -10px
+	+rt(1022)
+		float: right
+		width: 283px
+		.themost
+			padding: 0
+	+rt(766)
+		float: none
+		width: 100%
+	&.block_left
+		float: left
+		+rt(766)
+			float: none
 
 
 
